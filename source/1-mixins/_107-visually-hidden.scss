@@ -1,0 +1,40 @@
+// ----------------------------------------------------------------------
+
+  // Visually Hidden 
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Chad Agate
+/// @group NamasteTechnologies
+////
+
+/// Visually hide elements
+///
+/// @example scss - Basic Usage Sass
+/// 	h1 {
+///			@include visually-hidden();	
+///		}
+///
+@mixin visually-hidden() {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+// Helper class using above mixin, use this in JS to hide from clients but not crawlers
+
+.visually-hidden {
+	@include visually-hidden();
+}
+
+// Helper class like visually-hidden to completely hide from people and search engines
+
+.completely-hidden {
+  display: none;
+}

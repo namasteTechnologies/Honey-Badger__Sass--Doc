@@ -1,0 +1,342 @@
+/*============================================================================
+  #Product Page
+==============================================================================*/
+
+.product-single {
+  overflow: auto;
+  clear: both;
+  background-color: $colorWhite;
+  padding: $gutter;
+  @include mdc-elevation(5);
+
+  &__thumbnails {
+    @include span-columns(12);
+    margin-bottom: 1em;
+
+    @include media($tablet) {
+      @include span-columns(1);
+      margin-bottom: 0;
+    }
+  }
+
+  &__photos {
+    @include span-columns(12);
+
+    @include media($tablet) {
+      @include span-columns(6);
+    }
+  }
+
+  &__offers {
+    @include span-columns(12);
+    padding: 15px;
+
+    @include media($tablet) {
+      @include span-columns(5);
+      @include omega();
+      padding: 15px;
+      position: relative;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.3em;
+    text-align: center;
+    font-family: $montBlack;
+    letter-spacing: .1em;
+    padding-bottom: .5em;
+
+    @include media($tablet) {
+      text-align: left;
+    }
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    height: 2em;
+    justify-content: flex-start;
+  }
+
+  button {
+    border-radius: 0;
+    @include mdc-elevation(2);
+  }
+
+
+  .add-to-cart-pdp {
+    background-color: $colorAddToCart;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: shade($colorAddToCart, 20%);
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: $colorAddToCart;
+      }
+    }
+
+    @include media($tablet) {
+      margin: initial;
+    }
+  }
+
+  &__cost {
+    @include span-columns(12);
+
+    @include media($tablet) {
+      @include span-columns(5 of 5);
+      @include clearfix();
+    }
+
+    &--price {
+      @include span-columns(12);
+      color: $colorPrimary;
+      font-size: 2em;
+      text-align: center;
+      font-weight: 800;
+
+      @include media($tablet) {
+        @include span-columns(2.5 of 5);
+        text-align: left;
+      }
+
+      @include media($desktop) {
+        @include span-columns(2 of 5);
+        text-align: left;
+      }
+    }
+
+    &--compare {
+      @include span-columns(12);
+      text-decoration: line-through;
+      font-size: 1.5em;
+      color: #adaeb4;
+      text-align: center;
+
+      @include media($tablet) {
+        @include span-columns(2.5 of 5);
+        @include omega();
+        text-align: left;
+      }
+
+      @include media($desktop) {
+        @include span-columns(3 of 5);
+        @include omega();
+        text-align: left;
+      }
+    }
+  }
+  &__freeshipping {
+    margin-top: 15px;
+  }
+  &__selections {
+
+    @include media($tablet) {
+      @include span-columns(6 of 6);
+    }
+  }
+
+  &__quantity {
+    @include media($tablet) {
+      @include span-columns(6 of 6);
+      margin-top: 15px;
+    }
+  }
+
+  .selector-wrapper {
+    @include span-columns(6 of 6);
+
+    @include media($desktop) {
+      @include span-columns(2 of 6);
+    }
+  }
+
+  .js-qty {
+    max-width: initial;
+    @include span-columns(6 of 6);
+    
+    @include media($tablet) {
+      @include span-columns(4 of 6);
+    }
+
+    @include media($desktop) {
+      @include span-columns(2 of 6);
+    }
+
+    &__num {
+      background-color: $colorWhite;
+    }
+    &__adjust {
+      background-color: $colorPrimary;
+    }
+  }
+
+  .single-option-selector {
+    font-size: 1.2em;
+    height: 40px;
+  }
+
+  &__highlights {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    @include span-columns(12);
+
+    .tab-header-and-content {
+
+      .tab-link {
+        &:hover,
+        &:active,
+        &:focus {
+          color: $colorPrimary;
+        }
+      }
+
+      .is-active {
+        color: $colorPrimary;
+      }
+    }
+  }
+
+  &__variants {
+    display: none;
+
+
+    .no-js & {
+      display: block;
+    }
+  }
+
+  &__photos,
+  &__thumbnails {
+    a,
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+    &__num {
+      height: 40px;
+      background-color: $colorWhite;
+    }
+
+    button {
+      color: $colorWhite;
+    }
+
+  h4 {
+    margin: 15px 0 10px 0;
+  }
+}
+
+.preorder {
+  b {
+    color: $colorPrimary;
+  }
+}
+
+//Styles for vertical Swiper slider
+
+.swiper-container {
+  height: 120px;
+
+  @include media($tablet) {
+    height: 350px;
+  }
+
+  @include media($desktop) {
+    height: 480px;
+  }
+
+  .swiper-wrapper {
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+
+    @include media($tablet) {
+      flex-direction: column;
+      align-items: initial;
+    }
+
+    div {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide {
+      width: 90%;
+      display: flex;
+
+      img {
+        align-self: center;
+        padding: 1px;
+        border: 1px solid $colorPrimary;
+        max-height: 110px;
+
+        @include media($tablet) {
+          max-width: 55px;
+        }
+
+        @include media($desktop) {
+          max-width: 60px;
+          max-height: 75px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.thumbnails-up,
+.thumbnails-down {
+  display: none;
+}
+
+@include media($tablet) {
+  .thumbnails-up,
+  .thumbnails-down {
+    display: block;
+    color: $colorPrimary;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 44.5%;
+    font-size: 1.5em;
+    z-index: 10;
+  }
+
+  .thumbnails-up {
+    top: 10px;
+  }
+
+  .thumbnails-down {
+    bottom: -10px;
+  }
+}
+
+// CSS Hack/Override to Swiper Vendor File Appending -vertical Class & Properties
+
+.swiper-container-vertical>.swiper-wrapper {
+  flex-direction: row;
+
+  @include media($tablet) {
+    flex-direction: column;
+  }
+}

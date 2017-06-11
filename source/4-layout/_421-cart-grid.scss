@@ -1,0 +1,186 @@
+/*============================================================================
+  #Cart Page Grid
+==============================================================================*/
+
+.cart-grid {
+  margin: 50px 0;
+  @include clearfix();
+  padding: 0 20px;
+
+  @include media($tablet) {
+    display: flex;
+    align-items: center;
+  }
+  
+  &--heading {
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &__image {
+    @include span-columns(12);
+    @include omega();
+    @include clearfix();
+
+    @include media($tablet) {
+      @include omega-reset(n);
+      @include span-columns(3);
+    }
+
+    img {
+      max-width: 50%;
+      margin: 0 auto;
+
+      @include media($tablet) {
+        max-width: 80%;
+      }
+    }
+  }
+
+  &__title {
+    @include span-columns(12);
+    font-weight: 800;
+    @include omega();
+    @include clearfix();
+    text-align: center;
+    margin: 10px 0;
+
+    @include media($tablet) {
+      margin: 0;
+      @include omega-reset(n);
+      @include span-columns(3);
+      text-align: left;
+    }
+
+    &--heading {
+      color: $colorWhite;
+      display: none;
+
+      @include media($desktop) {
+        @include shift(2);
+        @include span-columns(3);
+      }
+    }
+  }
+
+  &__price {
+    @include span-columns(4);
+    text-align: left;
+    font-weight: 800;
+    @include clearfix();
+    text-align: center;
+
+    &--heading {
+      text-align: center;
+      color: $colorWhite;
+      display: none;
+
+      @include media($desktop) {
+        @include span-columns(3);
+      }
+    }
+
+    @include media($tablet) {
+      @include span-columns(2);
+      text-align: left;
+    }
+  }
+
+  &__quant {
+    @include span-columns(4);
+    text-align: center;
+    @include clearfix();
+
+    &--heading {
+      text-align: center;
+      color: $colorWhite;
+      display: none;
+
+      @include media($desktop) {
+        @include span-columns(2);
+      }
+    }
+
+    @include media($tablet) {
+      @include span-columns(2);
+    }
+
+    .js-qty {
+      margin: 0 auto;
+    }
+  }
+
+  &__total {
+    @include span-columns(4);
+    @include omega();
+    text-align: center;
+    font-weight: 800;
+    color: $colorPrimary;
+    @include clearfix();
+
+    @include media($tablet) {
+      @include span-columns(2);
+    }
+
+    &--heading {
+      text-align: center;
+      color: $colorWhite;
+      display: none;
+
+      @include media($desktop) {
+        @include span-columns(2);
+      }
+    }
+  }
+
+  button {
+    @include mdc-elevation(2);
+  }
+
+  &__bottom {
+    @include span-columns(12);
+    @include omega();
+    padding: 30px;
+    padding-top: 0;
+    margin: 25px 0;
+    text-align: center;
+
+    @include media($tablet) {
+      text-align: left;
+    }
+
+    @include media($desktop) {
+      @include span-columns(6);
+      @include shift(6);
+    }
+  }
+}
+
+//DOM Selectors on Cart Page
+
+.cart-page {
+  form {
+    clear: both;
+  }
+
+  h1 {
+    padding-top: 1em;
+    padding-bottom: 0;
+    text-align: center;
+    padding-left: 0;
+
+    @include media($desktop) {
+      padding-left: 2em;
+      text-align: left;
+      transition: padding-left 2s;
+    }
+  }
+
+  h2 {
+    margin: 10px;
+  }
+}

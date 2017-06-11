@@ -1,0 +1,29 @@
+/*============================================================================
+  #Layout for Related Products on PDP
+==============================================================================*/
+
+.related-products {
+  padding-bottom: $gutter;
+  overflow: auto;
+
+  &__heading {
+    margin: 3.16844% 0 0 $gutter; //Static percentage to match margin top of grid
+    text-transform: uppercase;
+  }
+}
+
+.related-add-to-cart {
+  background-color: $colorPrimary;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0;
+  @include mdc-elevation(2);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    background-color: darken($colorPrimary, 20%);
+  }
+}

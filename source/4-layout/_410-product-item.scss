@@ -1,0 +1,314 @@
+/*============================================================================
+  #Product Item (Single Item in Product Grid)
+==============================================================================*/
+
+.product-grid {
+  @include clearfix();
+  
+  // Collection of Products
+  &__grid {
+    @include span-columns(12 of 12);
+
+    @include media ($tablet-to-desktop) {
+      @include span-columns(4.5 of 9);
+      @include omega(2n);
+    }
+
+    @include media($desktop) {
+      @include span-columns(3 of 9);
+      @include omega(3n);
+    }
+    
+    //Collection of Products on Homepage
+    //DO NOT USE OMEGA - This Grid is in Swiper
+    &--home {
+      @include span-columns(12);
+      height: 26em !important; //Shorter for mobile viewports in swiper
+      margin-top: 2.16844% !important; //Override default single item margin-top
+      max-width: 275px;
+
+      @include media ($tablet-to-desktop) {
+        @include span-columns(6);
+      }
+
+      @include media($desktop) {
+        @include span-columns(3);
+        height: 26em !important;
+        max-width: initial;
+      }    
+    }
+
+    //Collection of Collections on Homepage
+    &--home-coll {
+      @include span-columns(12);
+      margin-top: 2.16844% !important; //Override default single item margin-top
+    
+      @include media ($tablet-to-desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
+      @include media($desktop) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+    }
+
+    //Collection of Collections (Brands, Product Types)
+    &--collections {
+      @include span-columns(12);
+    
+      @include media ($tablet-to-desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
+      @include media($desktop) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+    }
+    
+    //Related Products on PDP
+    &--related {
+      @include span-columns(12);
+    
+      @include media ($tablet-to-desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
+      @include media($desktop) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+    }
+
+    //Flash Sales
+    &--flashsales {
+      @include span-columns(12);
+    
+      @include media ($tablet-to-desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
+      @include media($desktop) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+    }
+  }
+
+  &__single-item {
+    position: relative;
+    background-color: $colorTile;
+    margin-top: 3.16844%; //to match the margin right
+    padding: 10px;
+    height: 29em;
+    @include mdc-elevation($elevationPrimary);
+
+    &--collections {
+      height: initial;
+    }
+
+    &:hover > .quick-view {
+      display: inline-block;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+    }
+
+    .quick-view {
+      position: absolute;
+      display: none;
+    }
+  }
+
+  &__single-item-link {
+    display: block;
+    position: relative;
+    min-height: 250px;
+
+    &--collection {
+      img {
+        width: auto;
+        max-height: 250px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    img {
+      width: auto;
+      max-height: 250px;
+      margin: 0 auto;
+      display: block;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin: 10px 0;
+    text-transform: uppercase;
+    height: $base-line-height*$base-font-size*$titleLinesDisplayed;
+    overflow: hidden;
+    font-weight: 800;
+    font-size: .9em;
+
+    a {
+      color: $colorTileName;
+    }
+  }
+
+  &__pricing {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height: 65px;
+    margin-top: -35px;
+
+    &--related {
+      height: 90px;
+    }
+  }
+
+  &__reviews {
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter--active {
+    font-weight: 800;
+  }
+
+  // Set sold-out class to display:none as it is breaking grid
+  // Also, "Sold Out" already appears in pricing info
+  .sold-out {
+    display: none;
+  }
+
+  .sold-out-text {
+    display: block;
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    line-height: 34px; //Stretch element to add to cart button height
+  }
+}
+.grid-add-to-cart {
+  left: 50%;
+}
+
+.frontpage-collections,
+.frontpage-products {
+  @include clearfix();
+
+  .sold-out {
+    display: none;
+  }
+
+  .sold-out-text {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1em;
+    position: absolute;
+    bottom: 25px;
+  }
+
+  &__info {
+    text-align: center;
+  }
+}
+
+// Styling for Elements Within Product Tiles
+
+.grid-add-to-cart,.btn-quick-view {
+  margin: 0 auto;
+  display: block;
+  background-color: $colorBtnAddToCart;
+  @include mdc-elevation(2);
+  border-radius: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $colorBtnAddToCartHover;
+  }
+}
+
+.grid-add-to-cart {
+  bottom: -5px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  margin-top: 10px;
+}
+
+.on-sale-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $colorSaleBanner;
+  color: $colorTextLight;
+  padding: 20px;
+  font-size: 1.5em;
+  @include mdc-elevation(3);
+
+  &__discount-percentage {
+    text-align: center;
+    font-family: $montBold;
+    display: block;
+    margin: 0 auto;
+    font-weight: 800;
+    line-height: 1.1em;
+  }
+
+  &__off-text {
+    text-align: center;
+    font-family: $montLight;
+  }
+}
+
+.product-price {
+  text-align: center;
+  color: $colorTilePrice;
+  font-weight: 800;
+  font-family: $montRegular;
+  margin-top: 30px;
+  margin-bottom: 12px;
+
+  .product-list__info & {
+    font-size: 1.2em;
+    text-align: center;
+    color: $colorTilePrice;
+    font-weight: 800;
+    font-family: $montRegular;
+  }
+}
+
+.compare-at-price {
+  text-align: center;
+  color: $colorCompare;
+  margin: 0 10px;
+}
+
+.sold-out-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $colorSaleBanner;
+  color: $colorTextLight;
+  padding: 20px;
+  @include mdc-elevation(2);
+}
+
+.read-more {
+  display: none;
+}

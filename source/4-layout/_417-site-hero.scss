@@ -1,0 +1,94 @@
+/*============================================================================
+  #Site Hero
+==============================================================================*/
+
+.hero {
+  position: relative;
+  display: block;
+  margin-bottom: $gutter;
+
+  &--hero {
+    background-size: cover;
+  }
+
+  &--medium {
+    height: 600px;
+  }
+
+  &__inner {
+    width: 80%;
+    padding: $gutter;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+  }
+
+  &__btn {
+    background-color: $editBlue;
+    padding: .75em 1.5em;
+    color: $colorWhite;
+    transition: background-color 1s;
+    display: inline-block;
+    @include mdc-elevation(2);
+    .thin {
+      font-family: $montUltraLight;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($editBlue, 20%);
+      color: $colorWhite;
+    }
+  }
+}
+
+.hero-text {
+  text-align: center;
+  @include media ($tablet) {
+    &--left {
+      text-align: left;
+    }
+    &--center {
+      text-align: center;
+    }
+    &--right {
+      text-align: right;
+    }
+  }
+}
+
+.mega-title {
+  margin-bottom: ($gutter / 2);
+  color: $colorWhite;
+  font-family: $montBlack;
+  text-transform: uppercase;
+  //text-shadow: 2px 2px 4px $colorBlack;
+
+  &--large {
+    font-size: 2.2em;
+    margin-bottom: 0;
+    @include media ($tablet) {
+      font-size: 5.2em;
+    }
+  }
+}
+
+.mega-subtitle {
+  margin-bottom: $gutter;
+  color: $colorWhite;
+
+  &--small {
+    font-size: 1em;
+  }
+
+  &--medium {
+    font-size: 1.4em;
+  }
+
+  &--large {
+    font-size: 2em;
+  }
+}

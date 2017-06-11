@@ -1,0 +1,22 @@
+{
+  "name": "honey-badger-sass",
+  "version": "0.0.1",
+  "description": "Documentation for Sass used in Namaste Technology's custom Shopify base theme, Honey Badger.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LV310Tech/Honey-Badger__Sass--Doc.git"
+  },
+  "author": "Marc Gale",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/LV310Tech/Honey-Badger__Sass--Doc/issues"
+  },
+  "homepage": "https://github.com/LV310Tech/Honey-Badger__Sass--Doc#readme",
+  "dependencies": {
+    "sassdoc": "^2.1.20"
+  }
+}

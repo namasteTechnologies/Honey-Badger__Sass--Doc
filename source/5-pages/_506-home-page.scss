@@ -1,0 +1,231 @@
+/*============================================================================
+  #Home Page
+==============================================================================*/
+
+.home-heading {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-family: $montBlack;
+  letter-spacing: .03em;
+  text-align: center;
+  margin-bottom: 1vw;
+
+  @include media($tablet) {
+    font-size: 2.75em;
+  }
+
+  &--products {
+    clear: left;
+    padding-bottom: 0;
+    padding-top: 1.5em;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+
+    &:first-child {
+      margin-top: -.6em;
+      padding-top: 1em;
+    }
+
+    @include media($desktop) {
+      text-align: left;
+    }
+  }
+}
+
+.home-divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  clear: both;
+}
+
+// Product Featured Rows on Homepage
+
+.tab-content {
+  overflow: visible;
+}
+
+.swiper-products {
+  .swiper-wrapper {
+    //display: flex;
+    //flex-direction: row;
+    //justify-content: center; 
+
+    .swiper-slide {
+      //width: initial !important;
+      @include media($desktop) {
+        flex: 1;
+      }
+    }
+  }
+
+  .swiper-slide-duplicate {
+    display: block;
+
+    @include media($desktop) {
+      display: none;
+    }
+  }
+}
+
+.prod-pagination {
+  text-align: center;
+  padding: 20px 0 0 0;
+  transform: scale(1.5);
+
+  .swiper-pagination-bullet {
+
+    // &:last-child {
+    //   display: none;
+    // }
+
+    &-active {
+    background: $colorTertiary;
+    }
+  }
+
+  @include media($desktop) {
+    display: none;
+  }
+}
+
+// Product Featured Switcher on Homepage
+
+.product-tabs {
+  .product-tabs-nav {
+    display: block;
+    background-color: $colorWhite;
+    @include mdc-elevation(5);
+    width: 100%;
+    text-align: center;
+
+    @include media($tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
+
+    .tab-link {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1.2em;
+
+      @include media($tablet) {
+        display: inline;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        padding: 15px 20px;
+
+        @include media($desktop) {
+          margin: 0 20px;
+        }
+
+        &:active,
+        &:focus,
+        &:visited {
+          color: $colorPrimary;
+        }
+      }
+
+      .current {
+        font-weight: 800;
+      }
+    }
+  }
+
+  .tab-content-group {
+    .tab-content {
+      display: none;
+    }
+
+    .current {
+      display: block !important;
+    }    
+  }
+}
+
+.about-us {
+
+  &__readmore {
+    background-color: $colorWhite;
+    @include mdc-elevation(2);
+    border: 2px solid $colorPrimary;
+    border-radius: 0;
+    font-size: 1.2em;
+    padding: 20px 60px;
+    color: $colorPrimary;
+    margin: 0 auto;
+    display: none;
+  }
+
+  p {
+    font-size: 1em;
+
+    @include media($tablet) {
+      font-size: 1em;
+    }
+  }
+}
+
+.frontpage-news {
+
+  &__bar {
+    background: $colorWhite;
+    width: 100%;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: 4.5vw;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__title {
+    padding: 10px 20px 10px 20px;
+    background: rgba(0, 0, 0, .4);
+    font-size: 4.5vw;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+    @include media($tablet) {
+      font-size: 1.5vw;
+    }
+
+    h3 {
+      padding: 0;
+      margin: 0;
+      color: $colorWhite;
+    }
+  }
+
+  &__author {
+    float: right;
+    color: $colorPrimary;
+    display: inline;
+    font-size: 3vw;
+    margin: 0;
+    padding: 0;
+
+    @include media($tablet) {
+      font-size: 1.3vw;
+    }
+  }
+
+  &__posted {
+    color: $colorPrimary;
+    font-size: 2.8vw;
+
+    @include media($tablet) {
+      font-size: 1.2vw;
+      font-weight: 800;
+    }
+  }
+}

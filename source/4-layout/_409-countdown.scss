@@ -1,0 +1,19 @@
+/*============================================================================
+	Flash sales coundown styling
+==============================================================================*/
+.js-counter-to-sale{
+	background:blue;
+	color:yellow;
+	span {
+		color:yellow;
+		background:blue;
+	}
+}
+.js-counter-active-sale{
+	background:green;
+	color:red;
+	span {
+		color:red;
+		background:green;
+	}
+}

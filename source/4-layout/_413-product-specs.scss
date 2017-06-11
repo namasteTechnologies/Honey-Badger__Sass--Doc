@@ -1,0 +1,15 @@
+/*============================================================================
+  #Layout for Product Specs on PDP 
+==============================================================================*/
+
+.product-specs {
+	&__item {
+    list-style-type: disc;
+    margin-left: 20px;
+
+		&--spec {
+			text-transform: capitalize;
+      font-weight: 800;
+		}
+	}
+}

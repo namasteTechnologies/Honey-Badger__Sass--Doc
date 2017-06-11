@@ -1,0 +1,42 @@
+/*================ Search bar in header ================*/
+.nav-search {
+  position: relative;
+  padding: 10px 0;
+
+  // @include at-query ($max, $tablet-size) {
+  //   padding: 0 0 ($gutter / 2);
+  //   margin: 0 auto;
+  //   text-align: center;
+  // }
+}
+
+.search-bar {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  .input-group-field {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  &__button {
+    background-color: initial;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    color: $fieldButtonColor;
+    padding: 5px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: initial;
+        color: $fieldButtonColor;
+      }
+  }
+
+  @include media($desktop) {
+    width: 100%;
+  }
+}

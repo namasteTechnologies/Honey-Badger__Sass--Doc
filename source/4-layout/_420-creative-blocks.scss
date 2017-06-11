@@ -1,0 +1,212 @@
+/*============================================================================
+  #Creative Blocks Layout (on Homepage)
+==============================================================================*/
+
+.creatives {
+  @include clearfix();
+
+  &__left {
+    @include span-columns(12);
+
+    @include media($desktop) {
+      margin-right: 1.5%;
+      @include span-columns(8);
+    }
+  }
+
+  &__right {
+    display: none;
+
+    @include media($desktop) {
+      @include span-columns(4);
+      @include omega();
+      height: 100%;
+    }
+  }
+}
+
+.creative-block {
+  background-color: $colorWhite;
+  @include mdc-elevation(5);
+  position: relative;
+  overflow: hidden;
+
+  &__link {
+    height: 100%;
+    display: block;
+  }
+
+  &__inner {
+    padding: 1em;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    display: block;
+    overflow-wrap: break-word;
+
+    &--shift-up {
+      top: 25%;
+    }
+
+    &--shift-down {
+      top: 75%;
+    }
+
+    &--shift-right {
+      padding-left: 4vw;
+    }
+
+    &--shift-left {
+      padding-right: 16vw;
+    }
+  }
+
+  &__btn {
+    background-color: $colorPrimary;
+    padding: .75em 1.5em;
+    color: $colorWhite;
+    @include mdc-elevation(2);
+    font-size: 4vw;
+
+    @include media($tablet) {
+      font-size: 2.3vw;
+    }
+
+    @include media($desktop) {
+      font-size: 1.2vw;
+    }
+  }
+
+  &--single {
+    @include span-columns(12);
+    height: 77.481vw;
+    margin-bottom: $gutter;
+
+    @include media($tablet) {
+      @include span-columns(4 of 8);
+      @include omega(2n);
+      height: 38.181vw;
+      margin-bottom: 2.583vw;
+    }
+
+    @include media($desktop) {
+      height: 25.357vw;
+      margin-bottom: 1.85vw;
+    }
+  }
+
+  &--double {
+    display: none;
+
+    @include media($tablet) {
+      display: block;
+      @include span-columns(8 of 8);
+      height: 38.181vw;
+    }
+
+    @include media($desktop) {
+      height: 25.357vw;
+      @include omega();
+    }
+  }
+
+  &--tall {
+    @include span-columns(4 of 4);
+    height: 52.563vw;
+    @include fill-parent;
+  }
+}
+
+.creative-block-text {
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &__heading {
+    letter-spacing: .07vw;
+    margin-bottom: 0;
+  }
+
+  &__heading,
+  &__subhead {
+
+    &--light {
+      font-family: $montLight;
+    }
+
+    &--regular {
+      font-family: $montRegular;
+    }
+
+    &--bold {
+      font-family: $montBlack;
+    }
+
+    &--xsm {
+      font-size: 6vw;
+
+      @include media($tablet) {
+        font-size: 3.5vw;
+      }
+
+      @include media($desktop) {
+        font-size: 1.5vw;
+      }    
+    }
+
+    &--sm {
+      font-size: 7vw;
+
+      @include media($tablet) {
+        font-size: 4vw;
+      }
+      
+      @include media($desktop) {
+        font-size: 2vw;
+      }
+    }
+
+    &--md {
+      font-size: 8vw;
+
+      @include media($tablet) {
+        font-size: 4.5vw;
+      }
+      
+      @include media($desktop) {
+        font-size: 2.5vw;
+      }
+    }
+
+    &--lg {
+      font-size: 9vw;
+
+      @include media($tablet) {
+        font-size: 5vw;
+      }
+      
+      @include media($desktop) {
+        font-size: 3vw;
+      }
+    }
+
+    &--xlg {
+      font-size: 10vw;
+
+      @include media($tablet) {
+        font-size: 5.5vw;
+      }
+      
+      @include media($desktop) {
+        font-size: 3.5vw;
+      }
+    }
+  }
+}

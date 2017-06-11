@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------
+
+  // Omega Reset
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Chad Agate
+/// @group NamasteTechnologies
+////
+
+/// Reset Omega for responsive devices
+///
+/// @example scss - Basic Usage Sass
+///    	@include media($tablet) {
+///			@include span-columns(4 of 12);
+///			@include omega(3n);
+///		}
+///		@include media($desktop) {
+///			@include omega-reset(3n);
+///			@include span-columns(3 of 12);
+///			@include omega(4n);
+///		}
+///
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) {
+    margin-right: flex-gutter(); 
+  }
+  &:nth-child(#{$nth}+1) {
+    clear: none;
+  }
+}

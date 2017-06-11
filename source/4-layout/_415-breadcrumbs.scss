@@ -1,0 +1,42 @@
+/*============================================================================
+  #Site Breadcrumbs
+==============================================================================*/
+
+.breadcrumb {
+	text-transform: uppercase;
+  color: gray;
+  margin: 0 0 ($gutter/2) 0;
+  padding-top: ($gutter/2);
+
+  &__item {
+    color: gray;
+
+    &:hover,
+    &:active,
+    &:focus
+     {
+      color: $colorLink;
+    }
+
+    &--active {
+      color: #000;
+      font-weight: 800;
+    }
+
+    a {
+      color: gray;
+
+      &:hover,
+      &:active,
+      &:focus
+       {
+        color: $colorLink;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 1.5em;
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,213 @@
+/*============================================================================
+  #Site Header
+==============================================================================*/
+
+// TEMPORARY STYLE TO REMOVE SHOPIFY ADMIN BAR
+// REMOVE BEFORE PRODUCTION
+
+// .admin-bar--minimized,
+// .storefront-bar,
+// .admin-bar--minimized span,
+// #admin_bar_iframe {
+//   display: none !important;
+// }
+
+// END TEMPORARY STYLES
+
+.site-header {
+  display: none;
+
+  //Hide entire site header on tablet & mobile
+  @include media($desktop) {
+    display: block;
+    padding: ($gutter / 2) 0 0 0;
+    background-color: $headerColor;
+  }
+
+  &__wrapper {
+    @include outer-container;
+    position: relative;
+    padding-bottom: 20px;
+
+    @include media($desktop) {
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: -20px;
+    left: -70px;
+    color: $colorPrimary;
+    background-color: initial;
+    font-size: 2em;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
+      background-color: initial;
+      color: $colorPrimary;
+    }
+
+    @include media($desktop) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    vertical-align: middle;
+    @include span-columns(12);
+    position: relative;
+
+    &--text {
+      @include visually-hidden;
+    }
+
+    a,
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+
+    a, img {
+      display: block;
+      color: $headerLinkColor;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 250px;
+    }
+
+    @include media($tablet) {
+      text-align: left;
+    }
+
+    @include media($desktop) {
+      @include span-columns(4);
+      
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  &__logo-link {
+    margin: 0 auto;
+    max-width: 250px;
+  }
+
+  &__cart-toggle {
+    display: inline-block;
+  }
+
+  &__search {
+    @include span-columns(12);
+    padding: 0 $gutter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include media($desktop) {
+      @include span-columns(4);
+    }
+  }
+
+  &__icons {
+    @include span-columns(12);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.875em;
+
+    @include media($desktop) {
+      @include span-columns(3);
+      @include shift(1);
+      text-align: right;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.call-support {
+  @include span-columns(12);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-align: center;
+  margin: 20px;
+
+  &__icon {
+    margin: 5px;
+  }
+
+  @include media($desktop) {
+    margin: 0;
+    margin-top: 5px;
+    position: relative;
+    bottom: 10px;
+    float: none;
+  }
+}
+
+.cart-drawer {
+  @include span-columns(6);
+
+  a {
+    color: $headerLinkColor;
+  }
+
+  &__text {
+    font-size: .4em;
+    background-color: $colorCartQtyBg;
+    color: $colorTextLight;
+    padding: 5px 7px 5px 8px; //Make sure right padding is 'n' minus (letter-spacing)
+    border-radius: 12px;
+    position: relative;
+    left: -20px;
+    bottom: -10px;
+    font-weight: 800;
+    letter-spacing: 1px; //Offset letter spacing on last character with right padding
+    &.hidden-count {
+      display: none;
+    }
+  }
+}
+
+.customer-account {
+  @include span-columns(6);
+
+  a {
+    color: $headerLinkColor;
+  }
+
+  #customer_login_link {
+    font-size: .6em;
+    vertical-align: middle;
+  }
+
+  &__text {
+    font-size: .5em;
+
+    &--logged-in,
+    &--log-out {
+    }
+  }
+}
+
+.header-divider {
+  margin-bottom: 0;
+  clear: both;
+  margin-top: -.1em;
+  border-bottom: 1px solid $colorDrawerBorder;
+}

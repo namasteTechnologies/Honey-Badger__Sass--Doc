@@ -1,0 +1,137 @@
+//============================================================================
+//  #Theme Variables
+//==============================================================================
+
+//============================================================================
+//  #General Variables
+//==============================================================================
+
+// EDIT Color Palette
+$editGreen: #00a678;
+$editBlack: #3c464f;
+$editBlue: #479ccf;
+$editOrange: #f79a2d;
+$editGray: #b7b7b7;
+$editGreenLight: #29b473; //Lighter shade from logo
+
+// Theme Colors 
+$colorPrimary: $editBlack;
+$colorSecondary: $editBlue;
+$colorTertiary: $editGreen;
+$colorAddToCart: $editOrange;
+
+// Theme Elevation Settings (for MDC)
+// Usage: @include mdc-elevation($elevationPrimary);
+$elevationPrimary: 5;
+$elevationSecondary: 7;
+
+/* Button colors */
+$colorBtnPrimary: $colorPrimary;
+$colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);
+$colorBtnPrimaryActive: darken($colorBtnPrimaryHover, 10%);
+$colorBtnPrimaryText: #fff;
+
+$colorBtnSecondary: $colorSecondary;
+$colorBtnSecondaryHover: darken($colorBtnSecondary, 10%);
+$colorBtnSecondaryActive: darken($colorBtnSecondaryHover, 10%);
+$colorBtnSecondaryText: #fff;
+
+$fieldButtonColor: #bbb;
+
+$colorBtnAddToCart: $colorAddToCart;
+$colorBtnAddToCartHover: darken($colorAddToCart, 10%);
+$colorBtnAddToCartActive: darken($colorAddToCart, 10%);
+$colorBtnAddToCartText: #fff;
+
+
+// Text link colors
+$colorLink: $colorPrimary;
+$colorLinkHover: lighten($colorPrimary, 14%);
+
+// Text colors
+$colorText: #000;
+$colorTextLight: #fff;
+$colorTextPrimary: $colorPrimary;
+
+// Backgrounds
+$colorBody: #fff;
+$colorAgeConfirmBg: #adadad;
+$colorBgPrimary: $colorPrimary;
+$colorCartQtyBg: $editOrange;
+
+// Helper colors
+$colorWhite: #fff;
+$colorBlack: #3c464f;
+
+
+// Border colors
+$colorBorder: #{unquote('$( color_borders)')};
+
+// Header colors
+$headerColor: #fff;
+$headerLinkColor: #000;
+
+// Nav and dropdown link background
+$colorNav: #fff;
+$colorNavText: $colorPrimary;
+$colorNavTextHover: $editGreen;
+
+// Product tile & tile banner colors
+$colorTile: #fff;
+$colorTileName: #000;
+$colorTilePrice: $colorPrimary;
+$colorSaleBanner: $colorSecondary;
+$colorCompare: #c3c3c3;
+
+// Site Footer
+$colorFooterBg: $editBlack;
+$colorFooterText: #fff;
+$colorFooterHeadingText: #fff;
+
+// Collection Pages
+
+// Logo max width
+$logoMaxWidth: #{unquote("$( logo_max_width | default: '451' | remove: 'px')")}px;
+
+// Helper colors
+$disabledGrey: #f6f6f6;
+$disabledBorder: darken($disabledGrey, 25%);
+$errorRed: #d02e2e;
+$errorRedBg: #fff6f6;
+$successGreen: #56ad6a;
+$successGreenBg: #ecfef0;
+
+// Drawers
+$drawerNavWidth: 300px;
+$drawerCartWidth: 300px;
+$colorDrawers: #f6f6f6;
+$colorDrawerBorder: darken($colorDrawers, 5%);
+$colorDrawerText: #333;
+$drawerTransition: all 0.5s ease-in-out; //cubic-bezier(0.46, 0.01, 0.32, 1);
+
+
+// Z-index
+$zindexNavDropdowns: 5;
+$zindexFixedNav: 100;
+$zindexDrawer: 200;
+
+/*================ Typography ================*/
+
+$headerFontStack: 'montserrat', sans-serif;
+$headerFontWeight: 800;
+
+$bodyFontStack: 'montserratLight', sans-serif;
+$baseFontSize: 16px; // Henceforth known as 1em
+
+$fontBlack: 'ralewayblack', sans-serif;
+
+$titleLinesDisplayed: 2;
+
+// Font variables (for use on text that already has a font stack, as a modifier)
+
+$montRegular: 'montserrat', sans-serif;
+$montBold: 'montserratBold', sans-serif;
+$montExtraBold: 'montserratExtraBold', sans-serif;
+$montBlack: 'montserratBlack', sans-serif;
+$montLight: 'montserratLight', sans-serif;
+$montUltraLight: 'montserratUltraLight', sans-serif;

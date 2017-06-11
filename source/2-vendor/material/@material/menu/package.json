@@ -1,0 +1,49 @@
+{
+  "name": "@material/menu",
+  "version": "0.1.1",
+  "description": "The Material Components for the web menu component",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/material-components/material-components-web.git"
+  },
+  "dependencies": {
+    "@material/animation": "^0.1.1",
+    "@material/base": "^0.1.0",
+    "@material/elevation": "^0.1.1",
+    "@material/theme": "^0.1.0",
+    "@material/typography": "^0.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/material-components/material-components-web/issues"
+  },
+  "homepage": "https://github.com/material-components/material-components-web#readme",
+  "_id": "@material/menu@0.1.1",
+  "scripts": {},
+  "_shasum": "ef3cf2b3242bb4bf691aa7c60123c8e5d24b863d",
+  "_from": "@material/menu@>=0.1.1 <0.2.0",
+  "_npmVersion": "3.10.10",
+  "_nodeVersion": "7.2.1",
+  "_npmUser": {
+    "name": "material",
+    "email": "traviskaufman+npm@google.com"
+  },
+  "dist": {
+    "shasum": "ef3cf2b3242bb4bf691aa7c60123c8e5d24b863d",
+    "tarball": "https://registry.npmjs.org/@material/menu/-/menu-0.1.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "material",
+      "email": "traviskaufman+npm@google.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/menu-0.1.1.tgz_1483977437749_0.9209476406686008"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/@material/menu/-/menu-0.1.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

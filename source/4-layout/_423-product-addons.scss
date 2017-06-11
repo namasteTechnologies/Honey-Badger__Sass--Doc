@@ -1,0 +1,109 @@
+/*============================================================================
+  #Layout for AddOns on the PDP
+==============================================================================*/
+
+.addon {
+	margin: 20px 0;
+  &__title {
+    padding: 0;
+    padding-left: 0px;
+    margin-bottom: 0;
+    line-height: 1em;
+    font-family: $montLight;
+    display: inline-block;
+    &--underline {
+      border-bottom: 2px solid #e5e5e5;
+    }
+  }
+  &__subtitle {
+    font-family: $montUltraLight;
+    font-size: .9em;
+    float: right;
+  }
+
+  &__item {
+    @include span-columns(12)
+    padding: 20px 0;
+    border-bottom: 2px solid #e5e5e5;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+      width: 50px;
+    }
+  }
+
+  &__name {
+    margin-top: 12px;
+    color: $colorTextPrimary;
+    font-size: 1em;
+    font-weight: 400;
+    align-self: center;
+  }
+
+  &__price {
+    @include span-columns(2 of 12);
+    color: $colorTextPrimary;
+    line-height: 50px;
+  }
+
+  &__add {
+    @include span-columns(1.5 of 12);
+  }
+  &__checkbox {
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+  }
+  &__checkbox--label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    margin: 5px;
+  }
+
+  &__link {
+    flex: 75%;
+    display: flex;
+  }
+
+  button {
+    background-color: $colorPrimary;
+    padding: 5px 10px;
+    border-radius: 0;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: darken($colorPrimary, 20%);
+    }
+  }
+}
+
+.addon__checkbox + .addon__checkbox--label:before {
+  content: '';
+  background: #fff;
+  border: 2px solid $colorPrimary;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  text-align: center;
+}
+.addon__checkbox:checked + .addon__checkbox--label:before {
+  content: "\f00c";
+  font-family: 'FontAwesome';
+  background: $colorPrimary;
+  color: #fff;
+  display: inline;
+}

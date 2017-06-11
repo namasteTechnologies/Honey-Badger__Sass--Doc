@@ -1,0 +1,259 @@
+/*============================================================================
+  #Site Nav and Dropdowns
+==============================================================================*/
+.navbar {
+  background-color: $colorNav;
+
+  &__wrapper {
+    width: 95%;
+    transition: transform .2s linear;
+  }
+
+  &--collection {
+    background: $editBlack;
+  }
+
+  &--fixed {
+    position: fixed;
+    z-index: $zindexFixedNav;
+    width: 100%;
+    top: 0;
+  }
+
+  &--condensed {
+    //transform: scale(.9);
+    font-size: .9em;
+  }
+}
+
+//Hide Desktop Nav on Tablet & Mobile
+
+.navbar-container {
+  border-bottom: 1px solid $editGreenLight;
+  display: none;
+
+  @include media($desktop) {
+    display: block;
+  }
+}
+
+.site-nav {
+  font-size: 1em;
+  cursor: default;
+  margin: 0 0 0 (-$gutter / 2);
+  display: none;
+  transition: font-size .2s linear;
+
+  li {
+    margin: 0;
+    display: block;
+  }
+
+  > li {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+  }
+
+  &--collection {
+
+    > li {
+      font-size: .9em;
+      padding: 5px 0;
+    }
+  }
+
+  @include media($desktop) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+/*================ Mobile Nav ================*/
+.mobile-navbar {
+  @extend .site-nav;
+  padding: .5em 1em;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  //margin-top: -130px;
+  //transition: margin-top .8s;
+  width: 100%;
+  background-color: $colorWhite;
+  border-bottom: 1px solid $editGreenLight;
+  //margin-left: 10000px;
+  //position: absolute;
+  //z-index: -1;
+  overflow: hidden;
+
+  &--display {
+    top: 0;
+    z-index: $zindexFixedNav;
+    margin-top: 0;
+    display: flex;
+    margin-left: initial;
+    position: fixed;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: $colorNavText;
+    margin-bottom: 7px;
+  }
+
+  &__call {
+    @include media($tablet) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__account {
+    color: $colorNavText;
+
+    @include media($tablet) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__cart {
+    color: $colorNavText;
+
+    @include media($tablet) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    background-color: initial;
+    font-size: 2em;
+    color: $colorNavText;
+    padding: 10px;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: initial;
+      color: $colorNavText;
+    }
+  }
+
+  &__logo {
+    height: 50px;
+    margin: 0 30px;
+
+    @include media($tablet) {
+      height: 70px;
+    }
+  }
+
+  &__search {
+    font-size: 2em;
+    color: $colorNavText;
+  }
+
+  &__search-bar {
+    position: relative;
+    top: 2px;
+    margin-bottom: -36px;
+    right: -1000px;
+    opacity: 0;
+    transition: opacity 1s, margin-bottom .5s;
+
+    &--display {
+      right: initial;
+      margin-bottom: 7px;
+      opacity: 1;
+      margin-top: 7px;
+    }
+  }
+  
+  @include media($desktop) {
+    display: none;
+  }
+
+  .text-right & {
+    margin: 0 (-$gutter / 2) 0 0;
+  }
+}
+
+/*================ Desktop Nav ================*/
+
+//Site Level Nav Links
+
+.site-nav__link {
+  display: block;
+  text-decoration: none;
+  padding: $gutter / 2;
+  white-space: nowrap;
+  color: $colorNavText;
+  text-transform: uppercase;
+  font-family: $montUltraLight;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $colorNavTextHover;
+
+    &:after {
+      border-bottom: 5px solid $colorNavTextHover;
+      width: 50%;
+      height: 5px;
+      content: ' ';
+      position: absolute;
+      left: 50%;
+      bottom: -3px;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  //Collection Level Nav Links
+
+  &--collection {
+    color: $colorWhite;
+    font-size: .9em;
+    padding: .8em 1.2em;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $colorNavTextHover;
+    }
+  }
+
+  .icon-arrow-down {
+    position: relative;
+    top: -2px;
+    font-size: 10px;
+    padding-left: $gutter / 4;
+  }
+
+  .site-nav--active > & {
+    font-weight: bold;
+
+    &:after {
+      border-bottom: 5px solid $colorNavTextHover;
+      width: 50%;
+      height: 5px;
+      content: ' ';
+      position: absolute;
+      left: 50%;
+      bottom: -3px;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .site-nav--mobile & {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,45 @@
+/*============================================================================
+  #Main Content Area
+==============================================================================*/
+
+.main-content {
+  //background-color: $colorBody;
+  min-height:100vh;
+  margin-top: 105px;
+  overflow: hidden;
+
+  @include media($tablet) {
+    margin-top: 137px;
+  }
+
+  @include media($desktop) {
+    margin-top: 0;
+  }
+
+	&__wrapper {
+    @include outer-container;
+    margin-bottom: $gutter;
+    padding-bottom: $gutter;
+    max-width: 85%;
+
+    @include media($tablet) {
+      max-width: 80%;
+    }
+
+    &--pdp {
+      width: 1280px;
+      max-width: 90%;
+    }
+
+    &--static {
+      width: 1280px;
+      max-width: 90%;
+    }
+  }
+}
+
+.heading {
+	&--grid {
+		margin-bottom: 0;
+	}
+}

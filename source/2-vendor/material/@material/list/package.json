@@ -1,0 +1,46 @@
+{
+  "name": "@material/list",
+  "description": "The Material Components for the web list component",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/material-components/material-components-web.git"
+  },
+  "dependencies": {
+    "@material/rtl": "^0.1.0",
+    "@material/typography": "^0.1.0",
+    "@material/theme": "^0.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/material-components/material-components-web/issues"
+  },
+  "homepage": "https://github.com/material-components/material-components-web#readme",
+  "_id": "@material/list@0.1.0",
+  "scripts": {},
+  "_shasum": "c8a24bb4d4639e981fd7a271e4afbddbaea39748",
+  "_from": "@material/list@>=0.1.0 <0.2.0",
+  "_npmVersion": "3.10.9",
+  "_nodeVersion": "7.1.0",
+  "_npmUser": {
+    "name": "material",
+    "email": "traviskaufman+npm@google.com"
+  },
+  "dist": {
+    "shasum": "c8a24bb4d4639e981fd7a271e4afbddbaea39748",
+    "tarball": "https://registry.npmjs.org/@material/list/-/list-0.1.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "material",
+      "email": "traviskaufman+npm@google.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/list-0.1.0.tgz_1481824512195_0.27616325044073164"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/@material/list/-/list-0.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

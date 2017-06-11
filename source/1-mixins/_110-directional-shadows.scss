@@ -1,0 +1,94 @@
+// ----------------------------------------------------------------------
+
+  // Layered Directional Shadows
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Marc Gale
+/// @group NamasteTechnologies
+////
+
+/// Creates a box shadow effect on just one side of an element.
+/// Designed to be compatible with Google MDC elevation effects in a theme.
+/// This is a work in progress and is not yet auto-calculating values.
+/// Completed version will calculate box shadow based on MDC elevation var.
+///
+/// @example scss - Basic Usage
+///   .CartDrawer {
+///     @include elevate(left);
+///   }
+///   
+///   //CSS Output
+///   .CartDrawer {
+///     box-shadow: -1px 0 1px 0 rgba(0,0,0,.1),
+///                 -2px 0 5px 0 rgba(0,0,0,.2),
+///                 -5px 0 10px 0 rgba(0,0,0,.1);
+///   }
+///
+/// @example scss - Full Sass Usage
+///   //Production file sets variables before mixin, such as these below
+///
+///   //Left shadow variables
+///   $borderShadowL: -1px 0 1px 0 rgba(0,0,0,.1); 
+///   $closeShadowL: -2px 0 5px 0 rgba(0,0,0,.2); 
+///   $farShadowL: -5px 0 10px 0 rgba(0,0,0,.1);
+///   //Right shadow variables
+///   $borderShadowR: 1px 0 1px 0 rgba(0,0,0,.1); 
+///   $closeShadowR: 2px 0 5px 0 rgba(0,0,0,.2); 
+///   $farShadowR: 5px 0 10px 0 rgba(0,0,0,.1);
+///   //Top shadow variables
+///   $borderShadowT: 0 -1px 1px 0 rgba(0,0,0,.1);
+///   $closeShadowT: 0 -2px 5px 0 rgba(0,0,0,.2);
+///   $farShadowT: 0 -5px 10px 0 rgba(0,0,0,.1);
+///   //Bottom shadow variables
+///   $borderShadowB: 0 1px 1px 0 rgba(0,0,0,.1);
+///   $closeShadowB: 0 2px 5px 0 rgba(0,0,0,.2);
+///   $farShadowB: 0 5px 10px 0 rgba(0,0,0,.1);
+///
+///   //Usage
+///
+///   .CartDrawer {
+///     @include elevate(left, $elevationVariable);
+///   }
+///   
+///   //CSS Output
+///   .CartDrawer {
+///     box-shadow: -1px 0 1px 0 rgba(0,0,0,.1),
+///                 -2px 0 5px 0 rgba(0,0,0,.2),
+///                 -5px 0 10px 0 rgba(0,0,0,.1);
+///   }
+///
+
+
+@mixin elevate($shadowDir) {
+
+//Left shadow variables
+$borderShadowL: -1px 0 1px 0 rgba(0,0,0,.1); 
+$closeShadowL: -2px 0 5px 0 rgba(0,0,0,.2); 
+$farShadowL: -5px 0 10px 0 rgba(0,0,0,.1);
+//Right shadow variables
+$borderShadowR: 1px 0 1px 0 rgba(0,0,0,.1); 
+$closeShadowR: 2px 0 5px 0 rgba(0,0,0,.2); 
+$farShadowR: 5px 0 10px 0 rgba(0,0,0,.1);
+//Top shadow variables
+$borderShadowT: 0 -1px 1px 0 rgba(0,0,0,.1);
+$closeShadowT: 0 -2px 5px 0 rgba(0,0,0,.2);
+$farShadowT: 0 -5px 10px 0 rgba(0,0,0,.1);
+//Bottom shadow variables
+$borderShadowB: 0 1px 1px 0 rgba(0,0,0,.1);
+$closeShadowB: 0 2px 5px 0 rgba(0,0,0,.2);
+$farShadowB: 0 5px 10px 0 rgba(0,0,0,.1);
+
+  @if $shadowDir == left {
+      box-shadow: $borderShadowL, $closeShadowL, $farShadowL;
+  } @else if $shadowDir == right {
+      box-shadow: $borderShadowR, $closeShadowR, $farShadowR;
+  } @else if $shadowDir == top {
+      box-shadow: $borderShadowT, $closeShadowT, $farShadowT;
+  } @else if $shadowDir == bottom {
+      box-shadow: $borderShadowB, $closeShadowB, $farShadowB;
+  } @else {
+    @error "Direction must be left, right, top, or bottom";
+  }
+}

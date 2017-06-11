@@ -1,0 +1,74 @@
+/*============================================================================
+  #Content Block
+==============================================================================*/
+
+.content-block {
+  padding: $gutter;
+  background-color: $colorWhite;
+  margin: $gutter 0;
+  @include mdc-elevation(5);
+
+  &--nopad {
+    padding: 0;
+  }
+
+  &--serp {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  &--cart {
+    margin: 0;
+    padding: 0;
+    @include span-columns(12);
+    @include omega();
+    background-color: $colorPrimary;
+    height: 24px;
+    transition: height 1s;
+
+    @include media($desktop) {
+      height: 44px;
+    }
+  }
+
+  &--frontpage-news {
+    @include span-columns(12);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3.16844%;
+    @include omega();
+    height: 60vw;
+    position: relative;
+
+    @include media($tablet) {
+      @include span-columns(4);
+      @include omega(3n);
+      height: 20vw;
+      float: left;
+      padding: 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n+1) {
+      margin-left: 0;
+      clear: left;
+    }
+  }
+
+  &__item {
+
+    &--frontpage-news {
+
+    }
+  }
+}
+
+.static-page {
+  &__item {
+    padding-top: $gutter;
+  }
+}

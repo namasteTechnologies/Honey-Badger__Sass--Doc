@@ -1,0 +1,102 @@
+/*============================================================================
+  #Layout for Related Accessories on PDP
+==============================================================================*/
+
+.accessories {
+	margin: 20px 0;
+  @include span-columns(12);
+
+  @include media($desktop) {
+    @include span-columns(5);
+    @include shift(7);
+  }
+
+  &__title {
+    padding: 0;
+    padding-left: 15px;
+    margin-bottom: 0;
+    line-height: 1em;
+    font-family: $montLight;
+  }
+
+  &__item {
+    @include span-columns(12)
+    padding: 20px 0;
+    border-bottom: 2px solid #e5e5e5;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+      width: 50px;
+      align-self: flex-start;
+    }
+  }
+
+  &__name {
+    margin-top: 12px;
+    color: #000;
+    font-size: 1em;
+    font-weight: 400;
+    align-self: center;
+  }
+
+  &__price {
+    @include span-columns(2 of 12);
+    color: $colorTextPrimary;
+    line-height: 50px;
+  }
+
+  &__add {
+    @include span-columns(1.5 of 12);
+  }
+
+  &__link {
+    flex: 75%;
+    display: flex;
+  }
+
+  button {
+    background-color: $colorPrimary;
+    padding: 5px 10px;
+    border-radius: 0;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: darken($colorPrimary, 20%);
+    }
+  }
+}
+
+// Override to Accordion from Refill
+.accordion ul.submenu {
+  display: block;
+}
+
+.accordion li>a {
+  padding-left: 10px;
+}
+
+.js-accordion-trigger {
+  position: relative;
+  display: block;
+
+  .accessories-expand {
+    transform: translate(-50%,-50%);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    font-size: 1.3em;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $colorPrimary;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+/*============================================================================
+  #Stock Notification Form on PDP
+==============================================================================*/
+
+.stock-notification {
+  padding-top: $gutter;
+  clear: left;
+
+  &__label {
+    font-size: 1.2em;
+  }
+
+  &__input-group {
+    display: table;
+  }
+
+  &__email {
+    height: 3.5em;
+    display: table-cell;
+    border-radius: 0;
+  }
+
+  .input-group-btn {
+    display: table-cell;
+    width: 1%;
+    vertical-align: top;
+  }
+
+  &__submit {
+    height: 3.5em;
+    text-align: left;
+    background-color: $colorPrimary;
+    border-radius: 0;
+  }
+}

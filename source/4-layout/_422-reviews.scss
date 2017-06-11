@@ -1,0 +1,18 @@
+/*============================================================================
+  #Review Components
+==============================================================================*/
+
+.reviews {
+  &__widget {
+    min-height: 100px!important;
+    @include mdc-elevation(5);
+  }
+
+  &__stars {
+    .yotpo .pull-left{
+      text-align: center;
+      float: none;
+    }
+  }
+}
+

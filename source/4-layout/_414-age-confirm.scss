@@ -1,0 +1,68 @@
+/*============================================================================
+  #Age Confirmation Modal
+==============================================================================*/
+
+.age-confirm {
+  width: 280px;
+  height: 340px;
+  background-color: $colorWhite;
+  border-radius: 0;
+  padding: 5px;
+  border: 10px solid $colorPrimary;
+  text-align: center;
+
+  @include media($tablet) {
+    width: 500px;
+    height: 220px;
+  }
+
+	&__heading {
+		text-transform: uppercase;
+    font-size: 1.8em;
+    text-align: center;
+	}
+
+  &__button {
+    text-align: center;
+    padding: 0;
+    height: 50px;
+    width: 125px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    @include mdc-elevation(3);
+    transition: background-color 1s;
+
+    &--yes{
+      background-color: $colorBtnPrimary;
+      
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        background-color: darken($colorPrimary, 20%);
+      }
+    }
+
+    &--no {
+      background-color: $colorAgeConfirmBg;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        background-color: darken($colorAgeConfirmBg, 20%);
+      }
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    font-size: .9em;
+    text-align: center;
+    padding: 0 5px;
+  }
+}
+
+.fancybox-skin {
+  padding: 0;
+}
